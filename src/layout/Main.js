@@ -8,16 +8,14 @@ const Main = () => {
     return (
         <div>
             <NavBar></NavBar>
-            <Container>
-                <Row>
-                    <Col lg="5">
+                <Row style={{margin:'0'}}>
+                    <Col lg="3" style={{padding:'0'}}>
                         <SidebarMenu></SidebarMenu>
                     </Col>
-                    <Col lg="7">
+                    <Col lg="9" style={{padding:'0'}}>
                         <Outlet></Outlet>
                     </Col>
                 </Row>
-            </Container>
         </div>
     );
 };
