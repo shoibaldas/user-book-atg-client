@@ -63,24 +63,18 @@ const SidebarMenu = () => {
           </div>
         </div>
         <div>
-          <div className="d-flex" style={{}}>
+          <div className="d-flex position-relative" style={{}}>
             <input
               onChange={(e) => handleSearchChange(e.target.value)}
               type="text"
               name="searchInput"
               placeholder="Search"
-              className="rounded"
+              className="rounded py-1 px-1"
             />
-            <button
-              type="submit"
-              className="btn px-3 rounded-right"
-              style={{ backgroundColor: "#018847" }}
-            >
-              <GoSearch
-                className="text-light"
-                style={{ fontSize: "1rem" }}
-              ></GoSearch>
-            </button>
+            <GoSearch
+              className="position-absolute fw-bold"
+              style={{ color: "#018847", fontSize: "1.2rem", right:'1rem', bottom:'.5rem' }}
+            ></GoSearch>
           </div>
         </div>
       </div>
