@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from '../../../assets/logo/logo.png'
 import Navbar from 'react-bootstrap/Navbar';
-import SearchBar from '../../../components/SearchBar/SearchBar';
 
 const NavBar = () => {
 
@@ -18,9 +17,6 @@ const NavBar = () => {
             </Navbar.Brand>
             </div>
         </Navbar>
-        {/* <Navbar className="justify-content-end position-relative" style={{padding:'0'}}>
-            <SearchBar></SearchBar>
-        </Navbar> */}
       </>
     );
 };

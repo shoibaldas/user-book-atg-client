@@ -6,6 +6,7 @@ const Home = () => {
             <h1>uhf</h1>
         </div>
     );
+
 };
 
 export default Home;

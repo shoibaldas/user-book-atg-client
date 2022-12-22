@@ -15,7 +15,7 @@ import {
 
 const UserDetails = () => {
   const details = useLoaderData();
-  const { firstName, lastName, username, email } = details.profile;
+  const { firstName, lastName, username, email } = details?.profile;
   return (
     <div className="p-4">
       <Card border="success" className="text-center">
@@ -76,7 +76,7 @@ const UserDetails = () => {
                       className="p-2 rounded"
                       style={{ backgroundColor: "#f0f0f5", width: "18rem" }}
                     >
-                      {details.jobTitle}
+                      {details?.jobTitle}
                     </Card.Text>
                   </Col>
                 </Row>
@@ -121,7 +121,7 @@ const UserDetails = () => {
               </Card.Text>
               <Card.Text className="text-black d-flex align-items-center justify-content-center">
                 <MdWork></MdWork>
-                <span className="mx-2">{details.jobTitle}</span>
+                <span className="mx-2">{details?.jobTitle}</span>
               </Card.Text>
               <Card.Text>
                 <MdOutlineAttachEmail></MdOutlineAttachEmail>{" "}

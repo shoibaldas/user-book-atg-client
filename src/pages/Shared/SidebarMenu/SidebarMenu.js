@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SidebarData from "./SidebarData";
 import Loading from "../../../components/Loading/Loading";
-import { CgIcecream, CgUserList } from "react-icons/cg";
-import SearchBar from "../../../components/SearchBar/SearchBar";
+import { CgUserList } from "react-icons/cg";
 import { GoSearch } from "react-icons/go";
 
 const SidebarMenu = () => {
@@ -16,11 +15,10 @@ const SidebarMenu = () => {
     axios
       .get("https://602e7c2c4410730017c50b9d.mockapi.io/users")
       .then(function (response) {
-        setUserList(response.data);
+        setUserList(response?.data);
         setLoading(false);
       });
   }, []);
- 
 
   const handleSearchChange = (e) => {
     if (e === "") {
@@ -29,15 +27,14 @@ const SidebarMenu = () => {
       setSearching(true);
     }
 
-    if(userList){
-      const resultsArray = userList.filter((user) => 
-      user.profile.firstName.toLowerCase().includes(e.toLowerCase())
-    );
+    if (userList) {
+      const resultsArray = userList.filter((user) =>
+        user.profile.firstName.toLowerCase().includes(e.toLowerCase())
+      );
 
-    setSearchResults(resultsArray);
-    console.log(searchResult)
+      setSearchResults(resultsArray);
+      console.log(searchResult);
     }
-    
   };
 
   if (loading) {
@@ -68,7 +65,7 @@ const SidebarMenu = () => {
         <div>
           <div className="d-flex" style={{}}>
             <input
-              onChange={(e)=> handleSearchChange(e.target.value)}
+              onChange={(e) => handleSearchChange(e.target.value)}
               type="text"
               name="searchInput"
               placeholder="Search"
@@ -90,6 +87,11 @@ const SidebarMenu = () => {
 
       {searching ? (
         <div className="p-2">
+          {searchResult.length === 0 ? (
+            <div className="text-light">No Result Found!</div>
+          ) : (
+            ""
+          )}
           {searchResult?.map((user) => (
             <SidebarData key={user.id} user={user}></SidebarData>
           ))}
