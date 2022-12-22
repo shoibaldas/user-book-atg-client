@@ -115,26 +115,27 @@ const UserDetails = () => {
               <Card.Title>
                 {firstName} {lastName}
               </Card.Title>
-              <Card.Text className="d-flex align-items-center justify-content-center">
-                <FcAddressBook className="fs-4"></FcAddressBook>
+              <Card.Text className="d-flex align-items-center justify-content-center"style={{fontSize:'1rem',margin:'0'}} >
+                <FcAddressBook className="fs-5"></FcAddressBook>
                 <span className="fw-light fst-italic">{username}</span>
               </Card.Text>
-              <Card.Text className="text-black d-flex align-items-center justify-content-center">
-                <MdWork></MdWork>
+              <Card.Text style={{fontSize:'1rem',margin:'0'}}>
+                <MdOutlineAttachEmail  className="text-primary"></MdOutlineAttachEmail>
+                <span className="mx-1">{email}</span>
+              </Card.Text>
+              <Card.Text className="text-black py-2 d-flex align-items-center justify-content-center" style={{margin:'0'}}>
+                <MdWork className="text-danger"></MdWork>
                 <span className="mx-2">{details?.jobTitle}</span>
               </Card.Text>
-              <Card.Text>
-                <MdOutlineAttachEmail></MdOutlineAttachEmail>{" "}
-                <span>{email}</span>
-              </Card.Text>
-              <div className="d-flex justify-content-center">
+              
+              <div className="d-flex mt-1 justify-content-center">
                 <Card bg="success" style={{ width: "18rem" }} className="mb-2">
                   <Card.Header className="text-light fst-italic">
-                    Bio
+                  “Bio”
                   </Card.Header>
                   <Card.Body>
                     <Card.Text className="text-light fst-italic">
-                      "{details.Bio}"
+                    “{details.Bio}”
                     </Card.Text>
                   </Card.Body>
                 </Card>
