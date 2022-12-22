@@ -10,7 +10,8 @@ const routes = createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<Home></Home>
+                element:<Home></Home>,
+                loader: () => fetch('https://602e7c2c4410730017c50b9d.mockapi.io/users')
             },
             {
                 path:'/user-details-of/:id',

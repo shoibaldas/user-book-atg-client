@@ -15,7 +15,7 @@ import {
 
 const UserDetails = () => {
   const details = useLoaderData();
-  const { firstName, lastName, username, email } = details?.profile;
+  const { firstName, lastName, username, email } = details.profile;
   return (
     <div className="p-4">
       <Card border="success" className="text-center">
@@ -41,7 +41,7 @@ const UserDetails = () => {
                       className="p-2 rounded"
                       style={{ backgroundColor: "#f0f0f5", width: "12rem" }}
                     >
-                      {firstName}
+                      {firstName ? firstName : "No data to show"}
                     </Card.Text>
                   </Col>
                   <Col className="text-start">
@@ -50,7 +50,7 @@ const UserDetails = () => {
                       className="p-2 rounded"
                       style={{ backgroundColor: "#f0f0f5", width: "12rem" }}
                     >
-                      {lastName}
+                      {lastName ? lastName : "No data to show"}
                     </Card.Text>
                   </Col>
                 </Row>
@@ -61,7 +61,7 @@ const UserDetails = () => {
                       className="p-2 rounded"
                       style={{ backgroundColor: "#f0f0f5", width: "14rem" }}
                     >
-                      {username}
+                      {username ? username : "No data to show"}
                     </Card.Text>
                   </Col>
                 </Row>
@@ -76,7 +76,7 @@ const UserDetails = () => {
                       className="p-2 rounded"
                       style={{ backgroundColor: "#f0f0f5", width: "18rem" }}
                     >
-                      {details?.jobTitle}
+                      {details.jobTitle ? details.jobTitle : "No data to show"}
                     </Card.Text>
                   </Col>
                 </Row>
@@ -93,7 +93,7 @@ const UserDetails = () => {
                       className="p-2 rounded"
                       style={{ backgroundColor: "#f0f0f5", width: "18rem" }}
                     >
-                      {email}
+                      {email ? email : "No data to show"}
                     </Card.Text>
                   </Col>
                 </Row>
@@ -113,29 +113,35 @@ const UserDetails = () => {
                 maxInitials={2}
               />
               <Card.Title>
-                {firstName} {lastName}
+                {firstName? firstName : "No data to show"} {lastName ? lastName : "No data to show"}
               </Card.Title>
-              <Card.Text className="d-flex align-items-center justify-content-center"style={{fontSize:'1rem',margin:'0'}} >
+              <Card.Text
+                className="d-flex align-items-center justify-content-center"
+                style={{ fontSize: "1rem", margin: "0" }}
+              >
                 <FcAddressBook className="fs-5"></FcAddressBook>
-                <span className="fw-light fst-italic">{username}</span>
+                <span className="fw-light fst-italic">{username ? username : "No data to show"}</span>
               </Card.Text>
-              <Card.Text style={{fontSize:'1rem',margin:'0'}}>
-                <MdOutlineAttachEmail  className="text-primary"></MdOutlineAttachEmail>
-                <span className="mx-1">{email}</span>
+              <Card.Text style={{ fontSize: "1rem", margin: "0" }}>
+                <MdOutlineAttachEmail className="text-primary"></MdOutlineAttachEmail>
+                <span className="mx-1">{email ? email : "No data to show"}</span>
               </Card.Text>
-              <Card.Text className="text-black py-2 d-flex align-items-center justify-content-center" style={{margin:'0'}}>
+              <Card.Text
+                className="text-black py-2 d-flex align-items-center justify-content-center"
+                style={{ margin: "0" }}
+              >
                 <MdWork className="text-danger"></MdWork>
-                <span className="mx-2">{details?.jobTitle}</span>
+                <span className="mx-2">{details.jobTitle ? details.jobTitle : "No data to show"}</span>
               </Card.Text>
-              
+
               <div className="d-flex mt-1 justify-content-center">
                 <Card bg="success" style={{ width: "18rem" }} className="mb-2">
                   <Card.Header className="text-light fst-italic">
-                  “Bio”
+                    “Bio”
                   </Card.Header>
                   <Card.Body>
                     <Card.Text className="text-light fst-italic">
-                    “{details.Bio}”
+                      “{details.Bio ? details.Bio : "No data to show"}”
                     </Card.Text>
                   </Card.Body>
                 </Card>

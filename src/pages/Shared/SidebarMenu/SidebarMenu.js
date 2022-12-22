@@ -82,7 +82,7 @@ const SidebarMenu = () => {
       {searching ? (
         <div className="p-2">
           {searchResult.length === 0 ? (
-            <div className="text-light">No Result Found!</div>
+            <div className="text-light d-flex justify-content-center">No Result Found!</div>
           ) : (
             ""
           )}
